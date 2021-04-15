@@ -1,6 +1,6 @@
 {
   "name": "testiny",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A stupid simple declarative API testing tool",
   "main": "index.js",
   "source": "index.js",
@@ -29,5 +29,13 @@
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
     "progress": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovidubya/testiny.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ovidubya/testiny/issues"
+  },
+  "homepage": "https://github.com/ovidubya/testiny#readme"
 }
