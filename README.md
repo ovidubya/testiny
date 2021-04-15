@@ -2,13 +2,13 @@
 
 > A declarative way to test RESTful API's with a single JS config.
 
-<img src="testiny_logo-200x200.png" align="right"
-     alt="Size Limit logo by Anton Lovchikov">
+<img src="https://raw.githubusercontent.com/ovidubya/testiny/main/testiny_logo-200x200.png" align="right"
+     alt="testiny logo">
 
 Testiny is a API testing tool for any language. It checks a single JS config file and parses to generate tests. Every generate will run and produce either a sucess or an error. 
 
 
-![usage](demo.gif)
+![usage](https://raw.githubusercontent.com/ovidubya/testiny/main/demo.gif)
 
 ## Usage
 
