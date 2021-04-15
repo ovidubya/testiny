@@ -1,0 +1,33 @@
+{
+  "name": "testiny",
+  "version": "0.0.1",
+  "description": "A stupid simple declarative API testing tool",
+  "main": "index.js",
+  "source": "index.js",
+  "bin": {
+    "testiny": "./index.js"
+  },
+  "scripts": {
+    "dry": "node index.js run --file config.js --logError",
+    "test": "jest"
+  },
+  "keywords": [
+    "simple",
+    "declarative",
+    "api",
+    "testing"
+  ],
+  "author": "Ovadia Shalom",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "progress": "^2.0.3"
+  }
+}
