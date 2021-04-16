@@ -9,6 +9,7 @@ const makeRequest = async ({
   payloads,
   dry,
   validateResponse,
+  whitelistHttpCodes,
 }) => {
   const errors = [];
   const success = [];
@@ -58,15 +59,27 @@ const makeRequest = async ({
       bar.tick({
         name: name,
       });
-      errors.push({
-        url: url,
-        statusCode: err.response.status,
-        statusText: err.response.statusText,
-        data: err.response.data,
-        headers: headers,
-        payloadRequest: currentPayload,
-        message: err.message,
-      });
+      if (whitelistHttpCodes.includes(err.response.status)) {
+        success.push({
+          url: url,
+          statusCode: err.response.status,
+          statusText: err.response.statusText,
+          data: err.response.data,
+          headers: headers,
+          payloadRequest: currentPayload,
+          message: err.message,
+        });
+      } else {
+        errors.push({
+          url: url,
+          statusCode: err.response.status,
+          statusText: err.response.statusText,
+          data: err.response.data,
+          headers: headers,
+          payloadRequest: currentPayload,
+          message: err.message,
+        });
+      }
     }
   }
   return { success, errors };

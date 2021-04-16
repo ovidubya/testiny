@@ -14,7 +14,14 @@ const Runner = async ({
   let totalErrors = [];
   for (let i = 0; i < tests.length; i++) {
     const test = tests[i];
-    const { path, method, skip, name, validateResponse = () => {} } = test;
+    const {
+      path,
+      method,
+      skip,
+      name,
+      validateResponse = () => {},
+      whitelistHttpCodes = [],
+    } = test;
 
     if (skip) {
       continue;
@@ -48,6 +55,7 @@ const Runner = async ({
       url: url,
       dry,
       validateResponse,
+      whitelistHttpCodes,
     });
 
     totalSuccess = [...totalSuccess, ...success];

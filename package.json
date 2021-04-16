@@ -1,6 +1,6 @@
 {
   "name": "testiny",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A stupid simple declarative API testing tool",
   "main": "index.js",
   "source": "index.js",

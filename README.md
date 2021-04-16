@@ -5,7 +5,7 @@
 <img src="https://raw.githubusercontent.com/ovidubya/testiny/main/testiny_logo-200x200.png" align="right"
      alt="testiny logo">
 
-Testiny is a API testing tool for any language. It checks a single JS config file and parses to generate tests. Every generate will run and produce either a sucess or an error. 
+Testiny is a API testing tool for any language. It checks a single JS config file and parses to generate tests. Every generate will run and produce either a success or an error. 
 
 
 ![usage](https://raw.githubusercontent.com/ovidubya/testiny/main/demo.gif)
@@ -44,6 +44,7 @@ Commands:
     - `skip` _&lt;boolean&gt;_ *optional* skips this test (default: false)
     - `validateResponse` &lt;AxiosResponse=>{}&gt;_ *optional* function to call for each test, it accepts an axios response object and expects an object thrown in format of {message: 'your message', response: response} (default: ()=>{})
     - `payloads` _&lt;object&gt;_ *optional* method of the api route to test
+    - `whitelistHttpCodes` Array&lt;number&gt; *optional* a list of status codes that are considered successful. ie if passed [500] then this test will be treated as a successful test
     
 
 
@@ -122,5 +123,26 @@ Token: <id token value here>
 ```
 
 
-## How it works
+## Supported authentication
+
+Authentication is a very important thing when testing APIS. There is currently out of box support for Firebase auth. 
+
+### Firebase
+
+```js
+{
+  strategy: "FIREBASE",
+  placement: {
+    type: "header",
+    key: "Token",
+  },
+  apiKey: "KSzafeFYRfeeIs3368E1RD4jpdWfeafdRjhtfee",
+  email: "mrcool@gmail.com",
+  password: "myPassword123",
+}
+```
+
+
+
+Since there is only one supported method of authentication, any PR's would be greatly appreciated 🙏🙏🙏
 
