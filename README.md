@@ -35,8 +35,9 @@ Commands:
         - `key` _&lt;string&gt;_ **required** the name of the token or cookie to inject the value in
     - `apiKey` _&lt;string&gt;_ **required** api key for the firebase app
     - `email` _&lt;string&gt;_ **required** email of the user to authenticate 
-    - `password` _&lt;string&gt;_ **required** password of the user to authenticate 
-- `tests` _Array&lt;object&gt;_ *optional* the tests in which will 
+    - `password` _&lt;string&gt;_ **required** password of the user to authenticate
+- `beforeAll` Array&lt;object&gt; | &lt;function(baseUrl, authValue, authentication)&gt; *optional* can either be an array of objects of tests (see below) or can be a function which gets passed three parameters. If an error happens, throw the error inside the function
+- `tests` Array&lt;object&gt; *optional* the tests in which will 
     - `name` _&lt;string&gt;_ **required** name of the test, can be anything but should be descriptive
     - `authenticated` _&lt;boolean&gt;_ *optional* whether or not this request should be authenticated (default: false)
     - `path` _&lt;string&gt;_ **required** path of the api route

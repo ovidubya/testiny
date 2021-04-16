@@ -12,13 +12,13 @@ const parser = async (file, options) => {
     throw "Unable to parse json file";
   }
 
-  if (!fileContents.host) {
+  const { host, isHttps, beforeAll = () => {} } = fileContents;
+
+  if (!host) {
     throw "Need a valid host example host";
   }
 
-  const baseUrl = `${fileContents.isHttps ? "https://" : "http://"}${
-    fileContents.host
-  }`;
+  const baseUrl = `${isHttps ? "https://" : "http://"}${host}`;
 
   let authValue = {};
   if (fileContents?.authentication && fileContents?.authentication?.strategy) {
@@ -37,13 +37,9 @@ const parser = async (file, options) => {
     authentication: fileContents.authentication,
     tests: fileContents.tests,
     dry: dry,
+    beforeAll: beforeAll,
   });
 
-  // if (logError && totalErrors.length !== 0) {
-  //   console.log(chalk.red("Errors below"));
-  //   throw totalErrors;
-  // } else {
-  // }
   return { totalSuccess, totalErrors };
 };
 
